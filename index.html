@@ -13,7 +13,7 @@
     
     <div id="outputArea"></div>
     
-    <script src="sanakirja.json">
+    <script> //src="sanakirja.json"
       console.log()
       var outputAreaRef = document.getElementById("outputArea");
       var output = "";
@@ -171,14 +171,15 @@
     }
 ];
 
-if (words[0] === word) {
+function search() {
+ if (words[0] === word) {
   word = words[word];
 }
 
 output = word;
 
 outputAreaRef.innerHTML = output;
-
+};
     </script>
   </body>
 </html>
