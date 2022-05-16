@@ -7,19 +7,55 @@
     <h1>Kajon sanakirja</h1> <!--Osaisinpa jotain :) -->
 
     <div class="words">
-      <input type="text" id="search" placeholder="Etsi sanaa...">
-      <button onclick="search()">Etsi</button>
+      <input type="text" id="searchInput" placeholder="Etsi sanaa...">
+      <button onclick="search2()">Etsi</button>
+      <button onclick="getAll()">Etsi</button>
     </div>
     
     <div id="outputArea"></div>
+    <div id="outputAreaGetAll"></div>
     
     <script> //src="sanakirja.json"
+
+    class Words {
+        constructor(suomi, svenska, english) {
+            this.suomi = suomi;
+            this.svenska = svenska;
+            this.english = english;
+        }
+    }
       console.log()
       var outputAreaRef = document.getElementById("outputArea");
-      var output = "";
       var word = "Ohjelmalaaksot";
-      var words = [
-    {
+      var words = [];
+      
+      words.push(new Words("Ohjelmalaaksot", "", "Program valleys"));
+      words.push(new Words("Kanttilaakso", "Actiondalen", "Action Valley"));
+
+      console.log(words);
+
+      // löydä sana
+     function search2() {
+      let keyWord = document.getElementById("searchInput").value;
+      let foundObject = words.find(o => o.suomi === keyWord);
+      //testitulostus
+      document.getElementById("outputArea").innerHTML = "Suomi: " + foundObject.suomi + " Englanti: " + foundObject.english;
+      console.log(foundObject);
+    }
+
+      //tulosta kaikki sanat listasta
+      function getAll() {
+          let text = "";
+      for (var i = 0; i < words.length; i++) {
+          text += words[i].suomi + " " + words[i].svenska + " " + words[i].english + "<br>";
+      }
+      document.getElementById("outputAreaGetAll").innerHTML = text;
+    }
+    /*
+    const propertyNames = Object.values(words);
+    document.getElementById("outputAreaGetAll").innerHTML = propertyNames;
+    */
+      /*
         "suomi": "Ohjelmalaaksot",
         "svenska": "",
         "English": "Program valleys"
@@ -168,8 +204,7 @@
         "suomi": "leirilippukunnanjohtaja",
         "svenska": "lägerkårchef",
         "English": "camp unit leader"
-    }
-];
+    }; */
 
 function search() {
  if (words[0] === word) {
