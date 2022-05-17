@@ -15,7 +15,7 @@
     <div id="outputArea"></div>
     <div id="outputAreaGetAll"></div>
     
-    <script> //src="sanakirja.json"
+    <script src="sanakirja.js"> // Dictionary script
 
     class Words {
         constructor(suomi, svenska, english) {
@@ -26,11 +26,14 @@
     }
       console.log()
       var outputAreaRef = document.getElementById("outputArea");
-      var word = "Ohjelmalaaksot";
+      var word = "Ohjelmalaaksot"; // test word, delete or disable later
+
+      /* 
       var words = [];
       
       words.push(new Words("Ohjelmalaaksot", "", "Program valleys"));
       words.push(new Words("Kanttilaakso", "Actiondalen", "Action Valley"));
+      */
 
       console.log(words);
 
