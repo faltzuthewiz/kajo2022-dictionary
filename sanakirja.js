@@ -163,3 +163,12 @@ for (var i = 0; i < words.length; i++) {
 text += "</table>"
 document.getElementById("outputAreaGetAll").innerHTML = text;
 }
+
+// Find a specific word (here: Finnish-English)
+function search2() {
+    let keyWord = document.getElementById("searchInput").value;
+    let foundObject = words.find(o => o.suomi === keyWord);
+    //testitulostus
+    document.getElementById("outputArea").innerHTML = "Suomi: " + foundObject.suomi + " Englanti: " + foundObject.english;
+    console.log(foundObject);
+  }

@@ -1,5 +1,7 @@
 table, th, td {
-    border:1px solid black;
+    border:1px solid #bebebe;
+    border-collapse: collapse;
+    font-family: barlow light;
   }
 
   p {
@@ -12,4 +14,11 @@ table, th, td {
 
   th {
       background-color: #96E6E6;
+      padding: 8px;
   }
+
+  td {
+    padding: 8px;
+  }
+
+  tr:nth-child(even){background-color: #bebebe;}
