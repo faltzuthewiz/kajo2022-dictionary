@@ -154,11 +154,12 @@ var words =
     }
 ];
 
-// Function that retrieves all the words in the dictionary.
+// Function that retrieves all the words in the dictionary. (Selected language: Finnish - others)
 function getAll() {
-    let text = "";
+    let text = "<table><tr><th>suomi</th><th>ruotsi</th><th>englanti</th></tr>";  // creates a table.
 for (var i = 0; i < words.length; i++) {
-    text += words[i].suomi + " " + words[i].svenska + " " + words[i].english + "<br>";
+    text += "<tr><td>" + words[i].suomi + "</td><td> " + words[i].svenska + "</td><td> " + words[i].english + "</td></tr>";
 }
+text += "</table>"
 document.getElementById("outputAreaGetAll").innerHTML = text;
 }
