@@ -21,4 +21,4 @@ table, th, td {
     padding: 8px;
   }
 
-  tr:nth-child(even){background-color: #bebebe;}
+  tr:nth-child(even){background-color: #f2f2f2;}

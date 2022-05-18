@@ -172,3 +172,22 @@ function search2() {
     document.getElementById("outputArea").innerHTML = "Suomi: " + foundObject.suomi + " Englanti: " + foundObject.english;
     console.log(foundObject);
   }
+
+  
+// Selects two languages to display
+  function selectLanguages() {
+    let text = "<table><tr><th>suomi</th><th>englanti</th></tr>";
+    for (var i = 0; i < words.length; i++) {
+        text += "<tr><td>" + words[i].suomi + "</td><td> " + words[i].english + "</td></tr>";
+    }
+    text += "</table>"
+    document.getElementById("outputAreaGetAll").innerHTML = text;
+    
+   // console.log(selectedLanguage1);
+  }
+
+  function checkSelection() {
+      if (document.getElementById("suomi-englanti").checked == true) {
+        return selectLanguages();
+  }
+}

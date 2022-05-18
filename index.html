@@ -4,13 +4,39 @@
     <link rel="stylesheet" href="style.css">
     <meta charset="utf-8">
   </head>
-  <body>
+  <body onload="getAll()">
     <h1>Kajon sanakirja</h1>
 
     <div class="words">
       <input type="text" id="searchInput" placeholder="Etsi sanaa...">
       <button onclick="search2()">Etsi</button>
+      <button onclick="selectLanguages()">Etsi</button>
       <button onclick="getAll()">Hae kaikki</button>
+    </div>
+
+    <div>
+      <input type="text" list="languages1" name="language1">
+        <datalist id="languages1">
+          <option value="suomi">
+          <option value="ruotsi">
+          <option value="englanti">
+        </datalist>
+
+        <p>-</p>
+
+      <input list="languages2" name="language2">
+        <datalist id="languages2">
+          <option value="suomi">
+          <option value="ruotsi">
+          <option value="englanti">
+        </datalist>    
+    </div>
+
+    <div>
+      <form>
+        <input onclick="checkSelection()" type="radio" id="suomi-englanti">
+        <label for="suomi-englanti">suomi - englanti</label>
+      </form>
     </div>
     
     <div id="outputArea"></div>
