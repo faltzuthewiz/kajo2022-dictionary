@@ -173,58 +173,10 @@ function search2() {
     console.log(foundObject);
   }
 
-  
+// Create variables for different language options.
 let finEng = document.getElementById("suomi-englanti");
 let finSwe = document.getElementById("suomi-ruotsi");
-
-// Create options
-let finOption1 = document.getElementById("suomi1").value;
-let sweOption1 = document.getElementById("ruotsi1").value;
-let engOption1 = document.getElementById("englanti1").value;
-
-let finOption2 = document.getElementById("suomi2").value;
-let sweOption2 = document.getElementById("ruotsi2").value;
-let engOption2 = document.getElementById("englanti2").value;
-console.log(finOption1);
-
-// create arrays for both options
-let options1 = [finOption1, sweOption1, engOption1];
-let options2 = [finOption2, sweOption2, engOption2];
-
-
-// Trying out a new way to get the selected value.
-/*
-const btn = document.querySelector('#btn');
-        const sb = document.querySelector('#lang1')
-        btn.onclick = (event) => {
-            event.preventDefault();
-            // show the selected index
-            alert(sb.value);
-        };
-*/
-
-// Test selection
-function testSelection() {
-var e = document.getElementById("lang1");
-var selected1 = e.value;
-console.log(selected1);
-
-    if (selected1 === "suomi1") {
-        selected1 = words[i].suomi;
-    }
-    console.log(selected1);
-}
-
-
-// My own code once again.
-function selectFirstLanguage() {
-    for (var i = 0; i < options1.length; i++) {
-        if (options1[i].checked == true) {
-            console.log(options1[i]);
-            return options1[i];
-        }
-    }
-}
+let engFin = document.getElementById("englanti-suomi");
 
 // Selects two languages to display
   function selectLanguages() {
@@ -236,8 +188,7 @@ function selectFirstLanguage() {
     document.getElementById("outputAreaGetAll").innerHTML = text;
 
     // Uncheck other radio button options
-    finSwe.checked = false;
-    finEng.checked = false;
+    uncheckOptions();
     
    // console.log(selectedLanguage1);
   }
@@ -250,15 +201,66 @@ function selectFirstLanguage() {
     text += "</table>"
     document.getElementById("outputAreaGetAll").innerHTML = text;
     
-    finSwe.checked = false;
-    finEng.checked = false;
+    uncheckOptions();
    // console.log(selectedLanguage1);
   }
 
+  function selectLanguagesEngFin() {
+    let text = "<table><tr><th>englanti</th><th>suomi</th></tr>";
+    for (var i = 0; i < words.length; i++) {
+        text += "<tr><td>" + words[i].english + "</td><td> " + words[i].suomi + "</td></tr>";
+    }
+    text += "</table>"
+    document.getElementById("outputAreaGetAll").innerHTML = text;
+    
+    uncheckOptions();
+   // console.log(selectedLanguage1);
+  }
+
+  let lang1 = [];
+  let lang2 = [];
+  let header1 = "";
+  let header2 = "";
+  //let suomi = [];
+  //let english = [];
+  //let svenska = [];
+
+  /*
+  for (var i = 0; i < words.length; i++) {
+    suomi += words[i].suomi + "<br>";
+    english += words[i].english + "<br>";
+    svenska += words[i].svenska;
+}
+*/
+
   function checkSelection() {
       if (finEng.checked == true) {
-        return selectLanguages();
+        lang1 = words.suomi;
+        lang2 = words.english;
+        header1 = "suomi";
+        header2 = "englanti";
+        selectLanguagesTest();
   } else if (finSwe.checked == true) {
         return selectLanguagesFinSwe();
+  } else if (engFin.checked == true) {
+      return selectLanguagesEngFin();
   }
+}
+
+function selectLanguagesTest() {
+    let text = "<table><tr><th>" + header1 + "</th><th>" + header2 + "</th></tr>";
+    for (var i = 0; i < words.length; i++) {
+        text += "<tr><td>" + words[i].lang1 + "</td><td> " + words[i].lang2 + "</td></tr>";
+    }
+    text += "</table>"
+    document.getElementById("outputAreaGetAll").innerHTML = text;
+    
+    uncheckOptions();
+   // console.log(selectedLanguage1);
+}
+
+function uncheckOptions() {
+    finSwe.checked = false;
+    finEng.checked = false;
+    engFin.checked = false;
 }
