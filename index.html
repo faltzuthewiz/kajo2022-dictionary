@@ -14,28 +14,42 @@
       <button onclick="getAll()">Hae kaikki</button>
     </div>
 
+    <!--
     <div>
       <input type="text" list="languages1" name="language1">
         <datalist id="languages1">
-          <option value="suomi">
-          <option value="ruotsi">
-          <option value="englanti">
+          <option id="suomi1" value="suomi">
+          <option id="ruotsi1" value="ruotsi">
+          <option id="englanti1" value="englanti">
         </datalist>
 
         <p>-</p>
 
       <input list="languages2" name="language2">
         <datalist id="languages2">
-          <option value="suomi">
-          <option value="ruotsi">
-          <option value="englanti">
+          <option id="suomi2" value="suomi">
+          <option id="ruotsi2" value="ruotsi">
+          <option id="englanti2" value="englanti">
         </datalist>    
     </div>
+-->
+    <!-- Trying out a new version of the select option-->
+<form>
+  <select id="lang1" onclick="testSelection()">
+      <option value="suomi1">suomi</option>
+      <option value="ruotsi1">ruotsi</option>
+      <option value="englanti1">englanti</option>
+  </select>
+<!--
+  <button id="btn" onclick="selectFirstLanguage()">Get the Selected Index</button> -->
+</form>
 
     <div>
       <form>
         <input onclick="checkSelection()" type="radio" id="suomi-englanti">
         <label for="suomi-englanti">suomi - englanti</label>
+        <input onclick="checkSelection()" type="radio" id="suomi-ruotsi">
+        <label for="suomi-ruotsi">suomi - ruotsi</label>
       </form>
     </div>
     
