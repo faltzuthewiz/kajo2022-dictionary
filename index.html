@@ -7,39 +7,24 @@
   <body onload="getAll()">
     <h1>Kajon sanakirja</h1>
 
+    <!--
     <div class="words">
       <input type="text" id="searchInput" placeholder="Etsi sanaa...">
       <button onclick="search2()">Etsi</button>
       <button onclick="selectLanguages()">Etsi</button>
-      <button onclick="getAll()">Hae kaikki</button>
+     
     </div>
-
+    -->
+    <button onclick="getAll()">Hae kaikki sanat</button>
     <!--
-    <div>
-      <input type="text" list="languages1" name="language1">
-        <datalist id="languages1">
-          <option id="suomi1" value="suomi">
-          <option id="ruotsi1" value="ruotsi">
-          <option id="englanti1" value="englanti">
-        </datalist>
-
-        <p>-</p>
-
-      <input list="languages2" name="language2">
-        <datalist id="languages2">
-          <option id="suomi2" value="suomi">
-          <option id="ruotsi2" value="ruotsi">
-          <option id="englanti2" value="englanti">
-        </datalist>    
-    </div>
--->
-    <!-- Trying out a new version of the select option-->
+     Trying out a new version of the select option
 <form>
   <select id="lang1" onclick="testSelection()">
       <option value="suomi1">suomi</option>
       <option value="ruotsi1">ruotsi</option>
       <option value="englanti1">englanti</option>
   </select>
+-->
 <!--
   <button id="btn" onclick="selectFirstLanguage()">Get the Selected Index</button> -->
 </form>
@@ -47,11 +32,15 @@
     <div>
       <form>
         <input onclick="checkSelection()" type="radio" id="suomi-englanti">
-        <label for="suomi-englanti">suomi - englanti</label>
+        <label for="suomi-englanti">suomi - englanti</label> <br>
         <input onclick="checkSelection()" type="radio" id="suomi-ruotsi">
-        <label for="suomi-ruotsi">suomi - ruotsi</label>
+        <label for="suomi-ruotsi">suomi - ruotsi</label> <br>
         <input onclick="checkSelection()" type="radio" id="englanti-suomi">
-        <label for="suomi-ruotsi">englanti - suomi</label>
+        <label for="suomi-ruotsi">englanti - suomi</label> <br>
+        <input onclick="checkSelection()" type="radio" id="ruotsi-suomi">
+        <label for="ruotsi-suomi">ruotsi - suomi</label> <br>
+        <input onclick="checkSelection()" type="radio" id="englanti-ruotsi">
+        <label for="englanti-ruotsi">englanti - ruotsi</label> <br>
       </form>
     </div>
     
@@ -71,12 +60,6 @@
       var outputAreaRef = document.getElementById("outputArea");
       var word = "Ohjelmalaaksot"; // test word, delete or disable later
 
-      /* 
-      var words = [];
-      
-      words.push(new Words("Ohjelmalaaksot", "", "Program valleys"));
-      words.push(new Words("Kanttilaakso", "Actiondalen", "Action Valley"));
-      */
 
       console.log(words);
     </script>

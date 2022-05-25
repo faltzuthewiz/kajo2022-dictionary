@@ -177,6 +177,9 @@ function search2() {
 let finEng = document.getElementById("suomi-englanti");
 let finSwe = document.getElementById("suomi-ruotsi");
 let engFin = document.getElementById("englanti-suomi");
+let sweFin = document.getElementById("ruotsi-suomi");
+let engSwe = document.getElementById("englanti-ruotsi");
+let sweEng = document.getElementById("ruotsi-englanti");
 
 // Selects two languages to display
   function selectLanguages() {
@@ -221,46 +224,76 @@ let engFin = document.getElementById("englanti-suomi");
   let lang2 = [];
   let header1 = "";
   let header2 = "";
-  //let suomi = [];
-  //let english = [];
-  //let svenska = [];
+  let suomi = [];
+  let english = [];
+  let svenska = [];
 
-  /*
+  
   for (var i = 0; i < words.length; i++) {
     suomi += words[i].suomi + "<br>";
     english += words[i].english + "<br>";
-    svenska += words[i].svenska;
+    svenska += words[i].svenska + "<br>";
 }
-*/
 
+    suomi = suomi.split("<br>");
+    english = english.split("<br>");
+    svenska = svenska.split("<br>");
+    
+
+ // Starts when the user clicks one of the language options. Checks which two languages was selected in which order.
   function checkSelection() {
       if (finEng.checked == true) {
-        lang1 = words.suomi;
-        lang2 = words.english;
+        lang1 = suomi;
+        lang2 = english;
         header1 = "suomi";
         header2 = "englanti";
         selectLanguagesTest();
   } else if (finSwe.checked == true) {
-        return selectLanguagesFinSwe();
+        lang1 = suomi;
+        lang2 = svenska;
+        header1 = "suomi";
+        header2 = "ruotsi";
+        return selectLanguagesTest();
   } else if (engFin.checked == true) {
-      return selectLanguagesEngFin();
+        lang1 = english;
+        lang2 = suomi;
+        header1 = "englanti";
+        header2 = "suomi";
+        return selectLanguagesTest();
+  } else if(sweFin.checked == true) {
+        lang1 = svenska;
+        lang2 = suomi;
+        header1 = "ruotsi";
+        header2 = "suomi";
+        return selectLanguagesTest();
+  } else if(engSwe.checked == true) {
+        lang1 = english;
+        lang2 = svenska;
+        header1 = "englanti";
+        header2 = "ruotsi";
+        return selectLanguagesTest();
   }
 }
 
 function selectLanguagesTest() {
     let text = "<table><tr><th>" + header1 + "</th><th>" + header2 + "</th></tr>";
     for (var i = 0; i < words.length; i++) {
-        text += "<tr><td>" + words[i].lang1 + "</td><td> " + words[i].lang2 + "</td></tr>";
+        text += "<tr><td>" + lang1[i] + "</td><td> " + lang2[i] + "</td></tr>";
     }
     text += "</table>"
     document.getElementById("outputAreaGetAll").innerHTML = text;
     
+    // Unchecks radio buttons.
     uncheckOptions();
    // console.log(selectedLanguage1);
 }
 
 function uncheckOptions() {
+    
     finSwe.checked = false;
     finEng.checked = false;
     engFin.checked = false;
+    sweFin.checked = false;
+    engSwe.checked = false;
+    
 }
