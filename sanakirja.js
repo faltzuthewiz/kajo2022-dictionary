@@ -164,6 +164,7 @@ text += "</table>"
 document.getElementById("outputAreaGetAll").innerHTML = text;
 }
 
+/*
 // Find a specific word (here: Finnish-English)
 function search2() {
     let keyWord = document.getElementById("searchInput").value;
@@ -172,6 +173,7 @@ function search2() {
     document.getElementById("outputArea").innerHTML = "Suomi: " + foundObject.suomi + " Englanti: " + foundObject.english;
     console.log(foundObject);
   }
+  */
 
 // Create variables for different language options.
 let finEng = document.getElementById("suomi-englanti");
@@ -180,6 +182,7 @@ let engFin = document.getElementById("englanti-suomi");
 let sweFin = document.getElementById("ruotsi-suomi");
 let engSwe = document.getElementById("englanti-ruotsi");
 let sweEng = document.getElementById("ruotsi-englanti");
+
 
 // Selects two languages to display
   function selectLanguages() {
@@ -241,6 +244,7 @@ let sweEng = document.getElementById("ruotsi-englanti");
     
 
  // Starts when the user clicks one of the language options. Checks which two languages was selected in which order.
+ /* Don't think I need this long since I dropped the radio buttons.
   function checkSelection() {
       if (finEng.checked == true) {
         lang1 = suomi;
@@ -274,7 +278,18 @@ let sweEng = document.getElementById("ruotsi-englanti");
         return selectLanguagesTest();
   }
 }
+*/
 
+// If I used parameters, I probably don't need to repeat the same code over and over... Function runs when user selects "Finnish - English" button.
+function selectFinEng() {
+    lang1 = suomi;
+    lang2 = english;
+    header1 = "suomi";
+    header2 = "englanti";
+    return selectLanguagesTest();
+}
+
+// DO NOT DELETE, IT IS NOT UNIMPORTANT DESPITE OF THE NAME. Btw change the name for the final version.
 function selectLanguagesTest() {
     let text = "<table><tr><th>" + header1 + "</th><th>" + header2 + "</th></tr>";
     for (var i = 0; i < words.length; i++) {
@@ -283,11 +298,12 @@ function selectLanguagesTest() {
     text += "</table>"
     document.getElementById("outputAreaGetAll").innerHTML = text;
     
-    // Unchecks radio buttons.
-    uncheckOptions();
+    // Unchecks radio buttons. Tbh I don't need the radio button uncheck anymore.
+    //uncheckOptions();
    // console.log(selectedLanguage1);
 }
 
+/* Don't think I need this anymore since I dropped the radio buttons.
 function uncheckOptions() {
     
     finSwe.checked = false;
@@ -297,3 +313,4 @@ function uncheckOptions() {
     engSwe.checked = false;
     
 }
+*/

@@ -15,7 +15,7 @@
      
     </div>
     -->
-    <button onclick="getAll()">Hae kaikki sanat</button>
+    
     <!--
      Trying out a new version of the select option
 <form>
@@ -29,6 +29,7 @@
   <button id="btn" onclick="selectFirstLanguage()">Get the Selected Index</button> -->
 </form>
 
+<!--
     <div>
       <form>
         <input onclick="checkSelection()" type="radio" id="suomi-englanti">
@@ -43,7 +44,24 @@
         <label for="englanti-ruotsi">englanti - ruotsi</label> <br>
       </form>
     </div>
+-->
     
+    <div class="center">
+    <div class="btn-group">
+      <button onclick="selectFinEng()" id="suomi-englanti">suomi - englanti</button>
+      <button >suomi - ruotsi</button>
+      <button>englanti - suomi</button>
+      <button>ruotsi - suomi</button>
+      <button>englanti - ruotsi</button>
+      <button>ruotsi - englanti</button>
+    </div>
+    </div>
+
+    <!--This button starts the "Get all words" -function. -->
+    <div class="center">
+      <button class="get-all-btn" onclick="getAll()">Hae kaikki sanat</button>
+    </div>
+
     <div id="outputArea"></div>
     <div id="outputAreaGetAll"></div>
     
