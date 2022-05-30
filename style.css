@@ -68,3 +68,8 @@ table, th, td {
     margin-left: auto;
     margin-right: auto;
 }
+
+button {
+    font-family: barlow light;
+    font-size: 14px
+}

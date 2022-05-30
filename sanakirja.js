@@ -156,7 +156,7 @@ var words =
 
 // Function that retrieves all the words in the dictionary.
 function getAll() {
-    let text = "<table><tr><th>suomi</th><th>ruotsi</th><th>englanti</th></tr>";  // creates a table.
+    let text = "<table><tr><th>&#127467;&#127470; suomi</th><th>&#127468;&#127463; ruotsi</th><th>&#127468;&#127463; englanti</th></tr>";  // creates a table.
 for (var i = 0; i < words.length; i++) {
     text += "<tr><td>" + words[i].suomi + "</td><td> " + words[i].svenska + "</td><td> " + words[i].english + "</td></tr>";
 }
@@ -182,9 +182,9 @@ function search2() {
   let suomi = [];
   let english = [];
   let svenska = [];
-  let suomiheader = "suomi";
-  let englishheader = "englanti";
-  let svenskaheader = "ruotsi";
+  let suomiheader = "&#127467;&#127470; suomi";
+  let englishheader = "&#127468;&#127463; englanti";
+  let svenskaheader = "&#127480;&#127466; ruotsi";
 
   
   for (var i = 0; i < words.length; i++) {
