@@ -2,6 +2,12 @@ table, th, td {
     border:1px solid #bebebe;
     border-collapse: collapse;
     font-family: barlow light;
+    margin: 15px;
+  }
+
+  table {
+      width: 95%;
+      overflow-wrap: break-word;
   }
 
   p {
@@ -10,6 +16,7 @@ table, th, td {
 
   h1 {
       text-align: center;
+      font-family: barlow;
   }
 
   th {
@@ -22,3 +29,47 @@ table, th, td {
   }
 
   tr:nth-child(even){background-color: #f2f2f2;}
+  tr:hover {background-color: #ddd;}
+
+  .btn-group button {
+    padding: 10px;
+    width: 200px;
+    color: white;
+    background-color: #1E2869;
+    display: block;
+    text-align: center;
+    float: none;
+  }
+
+.get-all-btn {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    float: none;
+    background-color: #AA50C8;
+    color: white;
+}
+/*
+.btn-group {
+    width: 95%;
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+} */
+
+
+.center {
+    width: 200px;
+    /* border: 5px solid #FFFF00; test color so I can see where the container was*/
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    font-family: barlow light;
+    font-size: 14px
+}
