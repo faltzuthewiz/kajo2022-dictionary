@@ -5,7 +5,7 @@
     <meta charset="utf-8">
   </head>
   <body onload="getAll()">
-    <h1>Kajon sanakirja</h1>
+    <h1>Partiosanakirja</h1>
 
     <!--
     <div class="words">
@@ -15,45 +15,18 @@
      
     </div>
     -->
-    
-    <!--
-     Trying out a new version of the select option
-<form>
-  <select id="lang1" onclick="testSelection()">
-      <option value="suomi1">suomi</option>
-      <option value="ruotsi1">ruotsi</option>
-      <option value="englanti1">englanti</option>
-  </select>
--->
-<!--
-  <button id="btn" onclick="selectFirstLanguage()">Get the Selected Index</button> -->
 </form>
 
-<!--
-    <div>
-      <form>
-        <input onclick="checkSelection()" type="radio" id="suomi-englanti">
-        <label for="suomi-englanti">suomi - englanti</label> <br>
-        <input onclick="checkSelection()" type="radio" id="suomi-ruotsi">
-        <label for="suomi-ruotsi">suomi - ruotsi</label> <br>
-        <input onclick="checkSelection()" type="radio" id="englanti-suomi">
-        <label for="suomi-ruotsi">englanti - suomi</label> <br>
-        <input onclick="checkSelection()" type="radio" id="ruotsi-suomi">
-        <label for="ruotsi-suomi">ruotsi - suomi</label> <br>
-        <input onclick="checkSelection()" type="radio" id="englanti-ruotsi">
-        <label for="englanti-ruotsi">englanti - ruotsi</label> <br>
-      </form>
-    </div>
--->
+
     
     <div class="center">
     <div class="btn-group">
-      <button onclick="selectFinEng()" id="suomi-englanti">suomi - englanti</button>
-      <button >suomi - ruotsi</button>
-      <button>englanti - suomi</button>
-      <button>ruotsi - suomi</button>
-      <button>englanti - ruotsi</button>
-      <button>ruotsi - englanti</button>
+      <button onclick="selectLanguages(suomi, english, suomiheader, englishheader)" id="suomi-englanti">&#127467;&#127470; suomi - englanti</button>
+      <button onclick="selectLanguages(suomi, svenska, suomiheader, svenskaheader)">suomi - ruotsi</button>
+      <button onclick="selectLanguages(english, suomi, englishheader, suomiheader)">englanti - suomi</button>
+      <button onclick="selectLanguages(svenska, suomi, svenskaheader, suomiheader)">ruotsi - suomi</button>
+      <button onclick="selectLanguages(english, svenska, englishheader, svenskaheader)">englanti - ruotsi</button>
+      <button onclick="selectLanguages(svenska, english, svenskaheader, englishheader)">ruotsi - englanti</button>
     </div>
     </div>
 
@@ -66,20 +39,6 @@
     <div id="outputAreaGetAll"></div>
     
     <script src="sanakirja.js"> // Dictionary script
-
-    class Words {
-        constructor(suomi, svenska, english) {
-            this.suomi = suomi;
-            this.svenska = svenska;
-            this.english = english;
-        }
-    }
-      console.log()
-      var outputAreaRef = document.getElementById("outputArea");
-      var word = "Ohjelmalaaksot"; // test word, delete or disable later
-
-
-      console.log(words);
     </script>
   </body>
 </html>
