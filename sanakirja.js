@@ -9,12 +9,12 @@ var words =
     },
     {
         suomi: "Kanttilaakso",
-        svenska: "Actiondalen",
+        svenska: "Tävlingsdalen",
         english: "Action Valley"
     },
     {
         suomi: "Mittelölaakso",
-        svenska: "Kampdalen",
+        svenska: "Tapperdalen",
         english: "Battle Valley"
     },
     {
@@ -24,7 +24,7 @@ var words =
     },
     {
         suomi: "Tuumalaakso",
-        svenska: "Heureka dalen",
+        svenska: "Tankedalen",
         english: "Heureka Valley"
     },
     {
