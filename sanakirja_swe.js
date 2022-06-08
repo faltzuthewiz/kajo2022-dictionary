@@ -158,7 +158,7 @@ var words =
 function getAll() {
     let text = "<table><tr><th>&#127480;&#127466; svenska</th><th>&#127467;&#127470; finska</th><th>&#127468;&#127463; engelska</th></tr>";  // creates a table.
 for (var i = 0; i < words.length; i++) {
-    text += "<tr><td>" + words[i].suomi + "</td><td> " + words[i].svenska + "</td><td> " + words[i].english + "</td></tr>";
+    text += "<tr><td>" + words[i].svenska + "</td><td> " + words[i].suomi + "</td><td> " + words[i].english + "</td></tr>";
 }
 text += "</table>"
 document.getElementById("outputAreaGetAll").innerHTML = text;
