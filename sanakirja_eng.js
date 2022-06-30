@@ -4,7 +4,7 @@ var words =
 [
     {
         suomi: "Ohjelmalaaksot",
-        svenska: " ",
+        svenska: "Programdalar",
         english: "Program valleys"
     },
     {
