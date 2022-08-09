@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+  </head>
+  <body onload="getAll()">
+    <h1>Scoutordbok svenska-finska-engelska</h1>
+
+    <!--
+    <div class="words">
+      <input type="text" id="searchInput" placeholder="Etsi sanaa...">
+      <button onclick="search2()">Etsi</button>
+      <button onclick="selectLanguages()">Etsi</button>
+     
+    </div>
+    -->
+</form>
+
+
+    
+    <div class="center">
+    <div class="btn-group">
+        <button onclick="selectLanguages(svenska, suomi, svenskaheader, suomiheader)">&#127480;&#127466; svenska - &#127467;&#127470; finska</button>
+        <button onclick="selectLanguages(svenska, english, svenskaheader, englishheader)">&#127480;&#127466; svenska - &#127468;&#127463; engelska</button>
+        <button onclick="selectLanguages(suomi, svenska, suomiheader, svenskaheader)">&#127467;&#127470; finska - &#127480;&#127466; svenska</button>
+        <button onclick="selectLanguages(english, svenska, englishheader, svenskaheader)"> &#127468;&#127463; engelska - &#127480;&#127466; svenska</button>
+        <button onclick="selectLanguages(suomi, english, suomiheader, englishheader)" id="suomi-englanti">&#127467;&#127470; finska - &#127468;&#127463; engelska</button>
+        <button onclick="selectLanguages(english, suomi, englishheader, suomiheader)">&#127468;&#127463; engelska - &#127467;&#127470; finska</button>
+    </div>
+    </div>
+
+    <!--This button starts the "Get all words" -function. -->
+    <div class="center">
+      <button class="get-all-btn" onclick="getAll()">Sök alla ord</button>
+    </div>
+
+    <div id="outputArea"></div>
+    <div id="outputAreaGetAll"></div>
+    
+    <script src="sanakirja_material.js"> // Dictionary material script
+    </script>
+    <script src="sanakirja_swe.js"> // Functionality script
+    </script>
+  </body>
+</html>
